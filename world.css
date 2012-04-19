@@ -1,0 +1,57 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	background: url(images/earth-1500-100.png) top center no-repeat;
+	font-family: Helvetica, sans-serif;
+	font-family: Times, Times New Roman, serif;
+}
+.head {
+	width: 1000px;
+	height: 200px;
+	margin: auto;
+	text-align: center;
+}
+.head .signPosts a.sign {
+	top: -10px;
+	color: #222;
+	width: 145px;
+	height: 55px;
+	margin: 0 40px;
+	outline: none;
+	padding: 43px 0 0 7px;
+	opacity: 0.75;
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+	background: url(images/blank-sign-post-04.png) no-repeat;
+}
+.head .signPosts a.sign.active,
+.head .signPosts a.sign:hover {
+	color: #555;
+	opacity: 1;
+}
+.head .signPosts a.sign.home {
+	top: -20px;
+	position: relative;
+}
+.head .signPosts a.sign.products {
+}
+.head .signPosts a.sign.events {
+}
+.head .signPosts a.sign.affiliates {
+	top: -20px;
+	position: relative;
+}
+.head .signPosts a.sign span {
+	font-size: 25px;
+	font-weight: bold;
+	font-family: Comic Sans, Comic Sans MS, cursive;
+}
+.page {
+	width: 990px;
+	margin: auto;
+/*	border: 2px solid #abc;
+	padding: 3px;
+	background: #eee;*/
+}
