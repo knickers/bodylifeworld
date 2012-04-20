@@ -2,12 +2,10 @@ jQuery(function($) {
 	// Helper functions to keep track of and resize the sign tabs
 	var addActive = function(e) {
 		$(e).addClass('active')
-			.animate({'scale': 1.0, 'translateY': '-=10px', 'opacity': 1});
+			.animate({'scale': 1.0, 'translateY': '-=10px'});
 	},  removeActive = function(e) {
 		$(e).removeClass('active')
-			.animate({'scale': 0.8, 'translateY': '+=10px', 'opacity': 0.75}, function() {
-				$(this).css({'opacity': ''});
-			});
+			.animate({'scale': 0.8, 'translateY': '+=10px'});
 	};
 	
 	// Helper function to load a pages content
@@ -18,7 +16,7 @@ jQuery(function($) {
 	// Event handler for the address changes
 	$.address.change(function(e) {
 		var self = $('[rel="address:' + e.value + '"]');
-		$('.page').load(self.attr('href'));
+		load(self.attr('href'));
 		$.address.title('Body Life World: ' + self.text());
 		self.click();
 	});
@@ -35,8 +33,15 @@ jQuery(function($) {
 		if (!$(this).hasClass('active')) {
 			removeActive($('.sign.active'));
 			addActive(this);
-			load($(this).attr('href'));
 		}
 		return false;
+	}).mouseenter(function() {
+		if (!$(this).hasClass('active')) {
+			$(this).stop().animate({'scale': 0.85}, 'fast');
+		}
+	}).mouseleave(function() {
+		if (!$(this).hasClass('active')) {
+			$(this).stop().animate({'scale': 0.8}, 'fast');
+		}
 	});
 });

@@ -1,4 +1,0 @@
-bodylifeworld
-=============
-
-BodyLifeWorld.com
