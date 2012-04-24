@@ -1,13 +1,4 @@
 jQuery(function($) {
-	// Helper functions to keep track of and resize the sign tabs
-	var addActive = function(e) {
-		$(e).addClass('active')
-			.animate({'scale': 1.0, 'translateY': '-=10px'});
-	},  removeActive = function(e) {
-		$(e).removeClass('active')
-			.animate({'scale': 0.8, 'translateY': '+=10px'});
-	};
-	
 	// Helper function to load a pages content
 	var load = function(url) {
 		$('.page').load(url);
@@ -31,8 +22,10 @@ jQuery(function($) {
 	// Click handler for all the sign tabs
 	$('.sign').click(function() {
 		if (!$(this).hasClass('active')) {
-			removeActive($('.sign.active'));
-			addActive(this);
+			$('.sign.active').removeClass('active')
+				.animate({'scale': 0.8, 'translateY': '+=10px'});
+			$(this).addClass('active')
+				.animate({'scale': 1.0, 'translateY': '-=10px'});
 		}
 		return false;
 	}).mouseenter(function() {
@@ -41,7 +34,7 @@ jQuery(function($) {
 		}
 	}).mouseleave(function() {
 		if (!$(this).hasClass('active')) {
-			$(this).stop().animate({'scale': 0.8}, 'fast');
+			$(this).stop().animate({'scale': 0.8}, 'med');
 		}
 	});
 });
