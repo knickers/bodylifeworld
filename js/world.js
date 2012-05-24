@@ -1,13 +1,8 @@
 jQuery(function($) {
-	// Helper function to load a pages content
-	var load = function(url) {
-		$('.page').load(url);
-	};
-	
 	// Event handler for the address changes
 	$.address.change(function(e) {
 		var self = $('[rel="address:' + e.value + '"]');
-		load(self.attr('href'));
+		$('.page').load(self.attr('href'));
 		$.address.title(self.text() + ' - Body Life World');
 		self.click();
 	});
@@ -36,10 +31,5 @@ jQuery(function($) {
 		if (!$(this).hasClass('active')) {
 			$(this).stop().animate({'scale': 0.8}, 'med');
 		}
-	});
-	
-	// Click handler for the main logo
-	$('.head .logo').click(function() {
-		$('.sign.home').click();
 	});
 });
