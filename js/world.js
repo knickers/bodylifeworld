@@ -8,7 +8,7 @@ jQuery(function($) {
 	$.address.change(function(e) {
 		var self = $('[rel="address:' + e.value + '"]');
 		load(self.attr('href'));
-		$.address.title('Body Life World: ' + self.text());
+		$.address.title(self.text() + ' - Body Life World');
 		self.click();
 	});
 	$.address.strict(false);
@@ -36,5 +36,10 @@ jQuery(function($) {
 		if (!$(this).hasClass('active')) {
 			$(this).stop().animate({'scale': 0.8}, 'med');
 		}
+	});
+	
+	// Click handler for the main logo
+	$('.head .logo').click(function() {
+		$('.sign.home').click();
 	});
 });
